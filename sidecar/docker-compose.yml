@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  main-app:
+    build:
+      context: ./main-app
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - RUST_LOG=info
+    networks:
+      - app-network
+
+  sidecar:
+    build:
+      context: ./sidecar
+      dockerfile: Dockerfile
+    environment:
+      - RUST_LOG=info
+    depends_on:
+      - main-app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

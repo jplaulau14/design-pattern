@@ -1,0 +1,49 @@
+# Rust specific ignores
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Debug files
+*.pdb
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build directories
+**/target/
+**/debug/
+**/release/
+
+# Docker specific
+.docker/
+docker-compose.override.yml
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Binary files
+*.exe
+*.dll
+*.so
+*.dylib
